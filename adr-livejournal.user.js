@@ -1,7 +1,7 @@
 // ==UserScript==
 // @id             adr-livejournal@pyhedgehog.github.com
 // @name           adr enricher for livejournal users
-// @version        1.0
+// @version        1.1
 // @homepage       https://github.com/pyhedgehog/microformat-userjs/
 // @namespace      https://github.com/pyhedgehog/microformat-userjs/
 // @author         Michael P. Dubner <pywebmail@mail.ru> http://pyhedgehog.livejorunal.com/
@@ -9,7 +9,7 @@
 // @include        *://*.livejournal.com/*
 // @run-at         document-end
 // ==/UserScript==
-(function mfenrich_livejournal_hcard() {
+(function() {
   var count=0;
   function add_locality(elem) { elem.className += ' locality p-locality'; return elem; }
   function add_adr(elem) {

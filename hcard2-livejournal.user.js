@@ -1,7 +1,7 @@
 // ==UserScript==
 // @id             hcard-livejournal@pyhedgehog.github.com
 // @name           hCard enricher for livejournal users
-// @version        1.0
+// @version        1.1
 // @homepage       https://github.com/pyhedgehog/microformat-userjs/
 // @namespace      https://github.com/pyhedgehog/microformat-userjs/
 // @author         Michael P. Dubner <pywebmail@mail.ru> http://pyhedgehog.livejorunal.com/
@@ -10,8 +10,7 @@
 // @run-at         document-end
 // @grant          unsafeWindow console
 // ==/UserScript==
-(function mfenrich_livejournal_hcard() {
-  //if(window !== window.top) return;
+(function() {
   if(!(/^https?:\/\/.*\.livejournal\.com\/[0-9]+\.html(\?|$)/i).test(window.location.href)) return;
   var w = window;
   if(typeof unsafeWindow != "undefined") {
