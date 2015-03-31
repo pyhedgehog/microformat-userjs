@@ -18,7 +18,9 @@
     elem.className += ' vcard h-card';
     // then we triggering DOMNodeInserted for all top-level elements of microformat
     // so Operator (or other microformat-parsing addon) can catch our changes.
-    var ev = new Event("DOMNodeInserted",{"bubbles":true});
+    //var ev = new Event("DOMNodeInserted",{"bubbles":true});
+    var ev = window.document.createEvent("MutationEvents");
+    ev.initMutationEvent("DOMNodeInserted", true, false, elem, null, null, null, null);
     elem.dispatchEvent(ev);
     return elem;
   }
@@ -30,6 +32,10 @@
   // and photo
   Array.prototype.map.call(window.document.getElementsByClassName('i-ljuser-userhead'), add_u_photo);
   Array.prototype.map.call(window.document.getElementsByClassName('i-ljuser'), add_h_card);
-  var p = '<p><a href="https://github.com/pyhedgehog/microformat-userjs" rel="nofollow">Handled by hcard-livejournal microformat enricher (found '+count+' contacts).</a></p>';
-  window.document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeend',p);
+  //var p = '<p><a href="https://github.com/pyhedgehog/microformat-userjs" rel="nofollow">Handled by hcard-livejournal microformat enricher (found '+count+' contacts).</a></p>';
+  //window.document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeend',p);
+  var p = window.document.createElement('p');
+  p.innerHTML = '<a href="https://github.com/pyhedgehog/microformat-userjs" rel="nofollow">Handled by hcard-livejournal microformat enricher (found '+count+' contacts).</a>';
+  window.document.getElementsByTagName('body')[0].appendChild(p);
+  return count;
 })();

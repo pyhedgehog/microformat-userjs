@@ -1,14 +1,16 @@
-// ==UserScript==
-// @id             adr-livejournal@pyhedgehog.github.com
-// @name           adr enricher for livejournal users
-// @version        1.1
-// @homepage       https://github.com/pyhedgehog/microformat-userjs/
-// @namespace      https://github.com/pyhedgehog/microformat-userjs/
-// @author         Michael P. Dubner <pywebmail@mail.ru> http://pyhedgehog.livejorunal.com/
-// @description    Example of userscript enriching livejournal site with adr microformat (using plain DOM)
-// @include        *://*.livejournal.com/*
-// @run-at         document-end
-// ==/UserScript==
+/*
+==UserScript==
+@id             adr-livejournal@pyhedgehog.github.com
+@name           adr enricher for livejournal users
+@version        1.1
+@homepage       https://github.com/pyhedgehog/microformat-userjs/
+@namespace      https://github.com/pyhedgehog/microformat-userjs/
+@author         Michael P. Dubner <pywebmail@mail.ru> http://pyhedgehog.livejorunal.com/
+@description    Example of userscript enriching livejournal site with adr microformat (using plain DOM)
+@include        *://*.livejournal.com/*
+@run-at         document-end
+==/UserScript==
+*/
 (function() {
   var count=0;
   function add_locality(elem) { elem.className += ' locality p-locality'; return elem; }
@@ -39,6 +41,10 @@
   Array.prototype.map.call(window.document.getElementsByClassName('p-location'), add_adr);
   Array.prototype.map.call(window.document.getElementsByClassName('lj-currents'), add_adr_check_href);
   //if(count==0) return;
-  var p = '<p><a href="https://github.com/pyhedgehog/microformat-userjs" rel="nofollow">Handled by adr-livejournal microformat enricher (found '+count+' locations).</a></p>';
-  window.document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeend',p);
+  //var p = '<p><a href="https://github.com/pyhedgehog/microformat-userjs" rel="nofollow">Handled by adr-livejournal microformat enricher (found '+count+' locations).</a></p>';
+  //window.document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeend',p);
+  var p = window.document.createElement('p');
+  p.innerHTML = '<a href="https://github.com/pyhedgehog/microformat-userjs" rel="nofollow">Handled by adr-livejournal microformat enricher (found '+count+' locations).</a>';
+  window.document.getElementsByTagName('body')[0].appendChild(p);
+  return count;
 })();

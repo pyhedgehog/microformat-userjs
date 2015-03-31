@@ -8,19 +8,28 @@
 // @description    Example of userscript enriching livejournal site with hCard microformat (using LJ-preloaded jQuery)
 // @include        *://*.livejournal.com/*
 // @run-at         document-end
-// @grant          unsafeWindow console
+// @grant          unsafeWindow
+// @grant          console
+// @grant          jQuery
 // ==/UserScript==
 (function() {
   if(!(/^https?:\/\/.*\.livejournal\.com\/[0-9]+\.html(\?|$)/i).test(window.location.href)) return;
-  var w = window;
+  var count = null, res = null, w = window;
+  function fastResolve(value){ res = value; }
+  var resolve = fastResolve;
   if(typeof unsafeWindow != "undefined") {
+    console.log("hcard2-livejournal.user.js: using unsafeWindow");
     w = unsafeWindow;
   }
   if(typeof console == "undefined") console = w.console;
+  if(typeof Promise != "undefined") {
+    res = new Promise(function(f){resolve=f;});
+    res.then(fastResolve);
+  }
   var dconsole = console;
   dconsole={log:function(){}};
   dconsole.log("hcard2-livejournal.user.js: "+window.location.href);
-  window.setTimeout(function mfenrich_livejournal_hcard_do(){
+  function mfenrich_livejournal_hcard_do(){
     dconsole.log(w);
     dconsole.log("hcard2-livejournal.user.js: readyState="+window.document.readyState+"; jQuery is "+(typeof w.jQuery));
     if((window.document.readyState != "complete") || (typeof w.jQuery == "undefined")) {
@@ -32,7 +41,8 @@
     // and photo
     w.jQuery('.i-ljuser-userhead').addClass('photo u-photo');
     var top = w.jQuery('.i-ljuser');
-    var count = top.length;
+    count = top.length;
+    resolve(count);
     // then we adding top-level class of hCard microformat
     top.addClass('vcard h-card')
     // then we triggering DOMNodeInserted for all top-level elements of microformat
@@ -40,6 +50,8 @@
     // When Operator migrates to MutationObserver it will be unnecessary.
       .trigger('DOMNodeInserted');
     w.jQuery('body').append('<p><a href="https://github.com/pyhedgehog/microformat-userjs" rel="nofollow">Handled hcard-livejournal by microformat enricher (found '+count+' contacts).</a></p>');
-    dconsole.log('hcard2-livejournal.user.js: done');
-  }, 0);
+    console.log('hcard2-livejournal.user.js: done');
+  }
+  mfenrich_livejournal_hcard_do();
+  return res;
 })();
