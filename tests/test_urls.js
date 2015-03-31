@@ -1,4 +1,6 @@
-﻿var util = require('util');
+﻿#!/usr/bin/env node
+
+var util = require('util');
 
 var test = require('tape').test;
 //var test = require('tape-catch');

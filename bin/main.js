@@ -1,4 +1,5 @@
-﻿/*if(global.v8debug) {
+#!/usr/bin/env node
+/*if(global.v8debug) {
   global.v8debug.Debug.setBreakOnUncaughtException();
 }*/
 var userjs = require('../lib/userjs');

@@ -1,4 +1,5 @@
-﻿var fs = require('fs');
+#!/usr/bin/env node
+var fs = require('fs');
 var path = require('path');
 var ScriptInfo = require('../lib/scriptsregistry').ScriptInfo;
 var baseDir = path.dirname(path.dirname(module.filename));
