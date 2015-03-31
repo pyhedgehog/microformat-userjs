@@ -13,15 +13,18 @@
     "type": "git",
     "url": "ssh://git@github.com/pyhedgehog/microformat-userjs.git"
   },
-  "devDependencies": {
-    "eslint": "^0.17.1",
+  "dependencies": {
     "jsdom": "^4.0.5",
-    "jshint": "^2.6.3",
     "q": "^1.2.0",
     "request": "^2.54.0",
+    "acorn": "^0.12.0",
+    "microformat-node": "^0.2.15"
+  },
+  "devDependencies": {
+    "eslint": "^0.17.1",
+    "jshint": "^2.6.3",
     "tape": "^3.5.0",
-    "tape-catch": "^1.0.4",
-    "acorn": "^0.12.0"
+    "tape-catch": "^1.0.4"
   },
   "keywords": [
     "browser",
