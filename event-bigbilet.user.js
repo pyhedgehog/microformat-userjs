@@ -110,7 +110,10 @@
     advinfo += '<span class="dtend dt-end" datetime="'+edt+'" title="'+edt+'">'+edt+'</span>';
     advinfoElem.innerHTML = advinfo;
     elem.appendChild(advinfoElem);
-    var ev = new Event("DOMNodeInserted",{"bubbles":true});
+    //var ev = new Event("DOMNodeInserted",{"bubbles":true});
+    //elem.dispatchEvent(ev);
+    var ev = window.document.createEvent("MutationEvents");
+    ev.initMutationEvent("DOMNodeInserted", true, false, elem, null, null, null, null);
     elem.dispatchEvent(ev);
     return elem;
   }

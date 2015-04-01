@@ -21,7 +21,10 @@
     Array.prototype.map.call(elem.getElementsByTagName('a'), add_locality);
     // then we triggering DOMNodeInserted for all top-level elements of microformat
     // so Operator (or other microformat-parsing addon) can catch our changes.
-    var ev = new Event("DOMNodeInserted",{"bubbles":true});
+    //var ev = new Event("DOMNodeInserted",{"bubbles":true});
+    //elem.dispatchEvent(ev);
+    var ev = window.document.createEvent("MutationEvents");
+    ev.initMutationEvent("DOMNodeInserted", true, false, elem, null, null, null, null);
     elem.dispatchEvent(ev);
     return elem;
   }
