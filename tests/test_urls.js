@@ -4,7 +4,7 @@ var util = require('util');
 
 var test = require('tape').test;
 //var test = require('tape-catch');
-var Promise = require('Q').Promise;
+var Promise = require('q').Promise;
 
 var userjs = require('../lib/userjs');
 
