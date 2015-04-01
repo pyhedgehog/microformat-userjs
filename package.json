@@ -4,7 +4,9 @@
   "description": "Site-specific browser scripts for enriching with microformats.",
   "main": "lib/userjs.js",
   "scripts": {
-    "test": "node tests/test.js",
+    "mf": "node bin/mfget.js",
+    "genscripts": "node bin/genscripts.js",
+    "test": "node tests/test_urls.js",
     "lint": "npm run jshint",
     "jshint": "node node_modules/jshint/bin/jshint tests/ lib/ adr-livejournal.user.js event-bigbilet.user.js hcard1-livejournal.user.js hcard2-livejournal.user.js",
     "eslint": "node node_modules/eslint/bin/eslint tests/ lib/ adr-livejournal.user.js event-bigbilet.user.js hcard1-livejournal.user.js hcard2-livejournal.user.js"
@@ -14,13 +16,13 @@
     "url": "ssh://git@github.com/pyhedgehog/microformat-userjs.git"
   },
   "dependencies": {
-    "jsdom": "^4.0.5",
+    "jsdom": "^3.1.2",
+    "microformat-node": "^0.2.15",
     "q": "^1.2.0",
-    "request": "^2.54.0",
-    "acorn": "^0.12.0",
-    "microformat-node": "^0.2.15"
+    "request": "^2.54.0"
   },
   "devDependencies": {
+    "acorn": "^1.0.1",
     "eslint": "^0.17.1",
     "jshint": "^2.6.3",
     "tape": "^3.5.0",
@@ -37,8 +39,5 @@
   "bugs": {
     "url": "https://github.com/pyhedgehog/microformat-userjs/issues"
   },
-  "homepage": "https://github.com/pyhedgehog/microformat-userjs",
-  "dependencies": {
-    "microformat-node": "^0.2.15"
-  }
+  "homepage": "https://github.com/pyhedgehog/microformat-userjs"
 }

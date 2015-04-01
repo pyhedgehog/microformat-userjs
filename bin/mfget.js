@@ -21,12 +21,16 @@ function onqueue() {
   if(url === undefined) return process.exit();
   //var obj = new userjs.UserJSApply(url, sl, jQueryify);
   var obj = new userjs.UserJSApply(url), arr;
+  obj.on('load', function() {
+    arr = obj.getMFarray();
+    console.log('getMFcount(load) =', obj.getMFcount());
+  });
   obj.on('userjs', function(res, script) {
     //console.log('userjs-res =', res);
     //console.log('userjs-script =', script.scriptName);
     arr = obj.getMFarray();
     //console.log('getMFarray =', JSON.stringify(arr, undefined, 4));
-    //console.log('getMFcount =', obj.getMFcount());
+    console.log('getMFcount('+script+', '+res+') =', obj.getMFcount());
     /*for(var k in arr) {
       console.log(' ', k, '=', arr[k].length);
     }*/
