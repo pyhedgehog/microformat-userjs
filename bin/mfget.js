@@ -5,8 +5,12 @@
 var userjs = require('../lib/userjs');
 var util = require('util');
 var scriptsregistry = require('../lib/scriptsregistry');
+var i;
+var url;
+var sl;
+var jQueryify;
+var queue = [];
 
-var i, url, sl, jQueryify, queue = [];
 for(i=2; i<process.argv.length; i++) {
   url = process.argv[i];
   //sl = scriptsregistry.url2scriptinfo(url);
@@ -18,9 +22,10 @@ process.on('main-url-queue', onqueue);
 process.emit('main-url-queue');
 function onqueue() {
   var url = queue.pop();
-  if(url === undefined) return process.exit();
+  if(url === undefined) { return process.exit(); }
   //var obj = new userjs.UserJSApply(url, sl, jQueryify);
-  var obj = new userjs.UserJSApply(url), arr;
+  var obj = new userjs.UserJSApply(url);
+  var arr;
   obj.on('load', function() {
     arr = obj.getMFarray();
     console.log('getMFcount(load) =', obj.getMFcount());
@@ -44,4 +49,3 @@ function onqueue() {
     process.emit('main-url-queue', onqueue);
   });
 }
-//debugger;

@@ -8,7 +8,7 @@
     "genscripts": "node bin/genscripts.js",
     "test": "node tests/test_urls.js",
     "lint": "npm run jshint",
-    "jshint": "node node_modules/jshint/bin/jshint tests/ lib/ userjs/"
+    "jshint": "node node_modules/jshint/bin/jshint tests/ lib/ userjs/ bin/"
   },
   "repository": {
     "type": "git",

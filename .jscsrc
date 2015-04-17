@@ -1,0 +1,10 @@
+{
+	"preset": "google",
+	"requireSpaceBeforeBinaryOperators": null,
+	"requireSpaceAfterBinaryOperators": null,
+	"requireSpaceAfterKeywords": ["switch", "catch", "return", "throw"],
+	"maximumLineLength": 147,
+	"validateQuoteMarks": true,
+	"disallowMultipleVarDecl": "exceptUndefined",
+	"requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties"
+}
