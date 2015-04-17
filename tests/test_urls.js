@@ -68,7 +68,7 @@ function doTest(url, scriptName, jQueryify) {
   var testObj = test(scriptName+' '+url, function(t) {
     var obj = new userjs.UserJSApply(url, scriptName, jQueryify, cache);
     var ref;
-    var refElem
+    var refElem;
     var firstScript = true;
     obj.once('error', onError);
     obj.once('close', onClose);
