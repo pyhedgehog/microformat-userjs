@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Microformat-userjs by pyhedgehog</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Microformat-userjs</h1>
+        <p class="header">Site-specific scripts for enriching with microformats.</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/pyhedgehog/microformat-userjs/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/pyhedgehog/microformat-userjs/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/pyhedgehog/microformat-userjs">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/pyhedgehog">pyhedgehog</a></p>
+
+
+      </header>
+      <section>
+        <h2>
+<a id="idea" class="anchor" href="#idea" aria-hidden="true"><span class="octicon octicon-link"></span></a>Idea</h2>
+
+<p>There are beautiful idea for making some types of data represented on web pages accessible for automatic and semi-automatic parsing - <a href="http://microformats.org/">Microformats</a>.</p>
+
+<p>However there are <a href="http://microformats.org/wiki/advocacy">huge flaw</a> in microformat usage scenario - if we want to gather data from some site we have to force owner of this site to support microformats.
+<em>It's often unachievable.</em>
+We have to shift the burden to interested side - user of microformat instead of site owner.</p>
+
+<p>There are technology that can help - user scripts:</p>
+
+<ol>
+<li>It's supported on almost every browser:
+
+<ul>
+<li>Firefox: <a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/">Greasemonkey</a>
+</li>
+<li>Firefox: <a href="https://addons.mozilla.org/en-US/firefox/addon/scriptish/">Scriptish</a>
+</li>
+<li>Opera: <a href="https://addons.opera.com/en/extensions/details/violent-monkey/">Violentmonkey</a>
+</li>
+<li>Opera: <a href="https://addons.opera.com/en/extensions/details/tampermonkey-beta/">Tampermonkey</a>
+</li>
+<li>IE6: <a href="http://www.webcitation.org/getfile?fileid=1517f90a646a7a3a439f3d5ae51d9d9d9e35872d">Turnabout</a>
+</li>
+<li>Chrome: <a href="https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo">Tampermonkey</a>
+</li>
+<li>Safari: <a href="http://steeev.freehostia.com/wp/2010/07/19/new-extension-for-safari-5-called-ninjakit-lets-you-install-gm-scripts/">NinjaKit</a>
+</li>
+</ul>
+</li>
+<li>Scripts written on JavaScript - language almost everybody can master.</li>
+<li>This technique (adding microformats using user scripts) supported by in-browser microformat engined (at least by <a href="https://addons.mozilla.org/en-US/firefox/addon/operator/">Operator</a>).</li>
+<li>These scripts can be used to post-process data on server side.</li>
+</ol>
+
+<h2>
+<a id="scenarios" class="anchor" href="#scenarios" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scenarios</h2>
+
+<h3>
+<a id="music-calendar" class="anchor" href="#music-calendar" aria-hidden="true"><span class="octicon octicon-link"></span></a>Music Calendar</h3>
+
+<p>You are interested in several concert places (each with own site), and some artists/groups (each with own site). Every other week you go to each of sites and copy concerts you are interested in to your calendar. You have to create calendar event, fill starting time, summary, address and description at least. Now you can write microformat enricher for every site and add events as batches. And this will work whatever is "provider" for your calendar - google/yahoo/owncloud or local file - single interface for microformat parser should be written and will work with every site that have microformats or was enriched.</p>
+
+<h3>
+<a id="company-contacts" class="anchor" href="#company-contacts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Company Contacts</h3>
+
+<p>Let's pretend that you want to add some colleagues to your own address book to keep contact after any of you leave company. Company address books are rarely compatible with latest open-source standards, so you have to fill the gap.</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
