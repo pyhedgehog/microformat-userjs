@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 
 var util = require('util');
 
@@ -7,6 +7,30 @@ var test = require('tape').test;
 var Promise = require('q').Promise;
 
 var userjs = require('../lib/userjs');
+var urlcache = require('../lib/urlcache');
+var cache = new urlcache.SqliteCache();
+
+var testObj = test('intro', function(t) {
+  t.pass('urlcache.DBVER '+urlcache.DBVER);
+  t.true(cache.db, 'cache.db '+cache.db);
+  cache.ready(function() {
+    t.pass('cache.size '+cache.size);
+    process.nextTick(onnext);
+    t.end();
+  }, function(error) {
+    t.pass('urlcache.DBVER '+urlcache.DBVER);
+    t.false(cache.error, 'cache.error '+cache.error);
+    t.false(cache.db, 'cache.db '+cache.db);
+    process.nextTick(onnext);
+    t.end(cache.error);
+  });
+  var sleeper = setInterval(function() {
+    console.log('ping');
+    if(!cache||!cache.db||queue.length===0)
+      clearInterval(sleeper);
+  },1000);
+  sleeper.ref();
+});
 
 var testsList = [
   ['http://news.livejournal.com/148366.html', 'hcard1-livejournal.user.js'],
@@ -35,10 +59,11 @@ function showErrors(errors, verbose) {
 }
 
 function doTest(url, scriptName, jQueryify) {
+  jQueryify = !!jQueryify;
   var ondone;
   var promise = new Promise(function(resolve){ondone=resolve;});
   var testObj = test(scriptName+' '+url, function(t) {
-    var obj = new userjs.UserJSApply(url, scriptName, !!jQueryify);
+    var obj = new userjs.UserJSApply(url, scriptName, jQueryify, cache);
     var ref, refElem, first_userjs = true;
     obj.once('error', onError);
     obj.once('close', onClose);
@@ -89,13 +114,12 @@ function doTest(url, scriptName, jQueryify) {
   return promise;
 }
 
-var queue = []
-testsList.forEach(function(arr){queue.push(arr);});
+var queue = [];
+//testsList.forEach(function(arr){queue.push(arr);});
 process.on('test-queue', onqueue);
 function onnext() {
   process.emit('test-queue', onqueue);
 }
-process.nextTick(onnext);
 function onqueue() {
   var arr = queue.pop();
   if(arr === undefined) {

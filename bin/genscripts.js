@@ -2,7 +2,7 @@
 var fs = require('fs');
 var path = require('path');
 var ScriptInfo = require('../lib/scriptsregistry').ScriptInfo;
-var baseDir = path.dirname(path.dirname(module.filename));
+var baseDir = path.resolve(path.dirname(path.dirname(module.filename)), 'userjs');
 var scripts = fs.readdirSync(baseDir).filter(function(fn){return fn.substr(fn.length-8)=='.user.js';});
 
 scripts = scripts.map(function(script) {
