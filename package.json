@@ -3,16 +3,23 @@
   "version": "1.0.0",
   "description": "Site-specific browser scripts for enriching with microformats.",
   "main": "lib/userjs.js",
+  "bin": {
+    "mfget": "./bin/mfget.js"
+  },
   "scripts": {
     "mf": "node bin/mfget.js",
+    "mfget": "node bin/mfget.js",
     "genscripts": "node bin/genscripts.js",
     "test": "node tests/test_urls.js",
-    "lint": "npm run jshint",
-    "jshint": "node node_modules/jshint/bin/jshint tests/ lib/ userjs/ bin/"
+    "lint": "npm run jshint1&&npm run jshint2&&npm run jscs0",
+    "jshint1": "node node_modules/jshint/bin/jshint tests/ lib/ bin/",
+    "jshint2": "node node_modules/jshint/bin/jshint -c userjs.jshintrc userjs/",
+    "jscs": "node node_modules/jscs/bin/jscs bin/ lib/ tests/ userjs/",
+    "jscs0": "node node_modules/jscs/bin/jscs bin/ lib/nodesupport.js lib/scriptsregistry.js lib/urlcache.js lib/userjs.js tests/ userjs/"
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/pyhedgehog/microformat-userjs.git"
+    "url": "https://github.com/pyhedgehog/microformat-userjs.git"
   },
   "dependencies": {
     "jsdom": "^3.1.2",
@@ -24,6 +31,7 @@
   "devDependencies": {
     "acorn": "^1.0.1",
     "jshint": "^2.6.3",
+    "jscs": "^1.12.0",
     "tape": "^3.5.0",
     "tape-catch": "^1.0.4"
   },
@@ -33,10 +41,14 @@
     "microformats",
     "userjs"
   ],
-  "author": "Michael P. Dubner",
-  "license": "PD",
+  "author": {
+    "name" : "Michael P. Dubner",
+    "email" : "pywebmail@list.ru",
+    "url" : "http://pyhedgehog.livejournal.com/"
+  },
+  "license": "Unlicense",
   "bugs": {
     "url": "https://github.com/pyhedgehog/microformat-userjs/issues"
   },
-  "homepage": "https://github.com/pyhedgehog/microformat-userjs"
+  "homepage": "https://pyhedgehog.github.io/microformat-userjs/"
 }

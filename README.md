@@ -8,6 +8,9 @@ Community: [![Open Issues](https://img.shields.io/github/issues/pyhedgehog/micro
 [![Stars](https://img.shields.io/github/stars/pyhedgehog/microformat-userjs.svg)](https://github.com/pyhedgehog/microformat-userjs/stargazers)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pyhedgehog/microformat-userjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
 
+[![Docs](https://img.shields.io/badge/docs-2%2F5-green.svg)](https://github.com/pyhedgehog/microformat-userjs/wiki#enrichers-implemented-in-this-repository)
+[![Install](https://img.shields.io/badge/install-5-green.svg)](https://github.com/pyhedgehog/microformat-userjs/tree/master/userjs)
+
 # microformat-userjs
 Site-specific scripts for enriching with microformats.
 

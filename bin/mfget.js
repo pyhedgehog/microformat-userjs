@@ -3,12 +3,11 @@
   global.v8debug.Debug.setBreakOnUncaughtException();
 }*/
 var userjs = require('../lib/userjs');
-var util = require('util');
-var scriptsregistry = require('../lib/scriptsregistry');
+//var scriptsregistry = require('../lib/scriptsregistry');
 var i;
 var url;
-var sl;
-var jQueryify;
+//var sl;
+//var jQueryify;
 var queue = [];
 
 for(i=2; i<process.argv.length; i++) {

@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-var util = require('util');
-
 var test = require('tape-catch');
 var Promise = require('q').Promise;
 
@@ -9,14 +7,14 @@ var userjs = require('../lib/userjs');
 var urlcache = require('../lib/urlcache');
 var cache = new urlcache.SqliteCache();
 
-var testObj = test('intro', function(t) {
+test('intro', function(t) {
   t.pass('urlcache.DBVER ' + urlcache.DBVER);
   t.true(cache.db, 'cache.db ' + cache.db);
   cache.ready(function() {
     t.pass('cache.size '+cache.size);
     process.nextTick(onnext);
     t.end();
-  }, function(error) {
+  }, function() {
     t.pass('urlcache.DBVER ' + urlcache.DBVER);
     t.false(cache.error, 'cache.error ' + cache.error);
     t.false(cache.db, 'cache.db ' + cache.db);
@@ -43,9 +41,9 @@ var testsList = [
   //['http://bigbilet.ru/place/artbene', 'event-bigbilet.user.js']
 ];
 
-quiet = true;
-verboseWarning = false;
-verboseError = false;
+var quiet = true;
+var verboseWarning = false;
+var verboseError = false;
 
 function showErrors(errors, verbose) {
   if(quiet) { return; }
@@ -65,11 +63,12 @@ function doTest(url, scriptName, jQueryify) {
   jQueryify = !!jQueryify;
   var ondone;
   var promise = new Promise(function(resolve) { ondone=resolve; });
-  var testObj = test(scriptName+' '+url, function(t) {
+  test(scriptName+' '+url, function(t) {
     var obj = new userjs.UserJSApply(url, scriptName, jQueryify, cache);
     var ref;
     var refElem;
     var firstScript = true;
+    obj.on('warn', onWarn);
     obj.once('error', onError);
     obj.once('close', onClose);
     obj.on('load', onBeforeUserJS);
@@ -129,12 +128,11 @@ function doTest(url, scriptName, jQueryify) {
       ondone('ok');
     }
   });
-  //console.log(util.inspect(testObj));
   return promise;
 }
 
 var queue = [];
-//testsList.forEach(function(arr){queue.push(arr);});
+testsList.forEach(function(arr) { queue.push(arr); });
 process.on('test-queue', onqueue);
 function onnext() {
   process.emit('test-queue', onqueue);

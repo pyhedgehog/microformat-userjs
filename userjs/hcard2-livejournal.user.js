@@ -1,7 +1,7 @@
 // ==UserScript==
 // @id             hcard-livejournal@pyhedgehog.github.com
 // @name           hCard enricher for livejournal users
-// @version        1.1
+// @version        1.2
 // @homepage       https://github.com/pyhedgehog/microformat-userjs/
 // @namespace      https://github.com/pyhedgehog/microformat-userjs/
 // @author         Michael P. Dubner <pywebmail@mail.ru> http://pyhedgehog.livejorunal.com/
@@ -13,28 +13,30 @@
 // @grant          jQuery
 // ==/UserScript==
 (function() {
-  if(!(/^https?:\/\/.*\.livejournal\.com\/[0-9]+\.html(\?|$)/i).test(window.location.href)) return;
-  var count = null, res = null, w = window;
-  function fastResolve(value){ res = value; }
+  if(!(/^https?:\/\/.*\.livejournal\.com\/[0-9]+\.html(\?|$)/i).test(window.location.href)) { return; }
+  var count = null;
+  var res = null;
+  var w = window;
+  function fastResolve(value) { res = value; }
   var resolve = fastResolve;
-  if(typeof unsafeWindow != "undefined") {
-    console.log("hcard2-livejournal.user.js: using unsafeWindow");
+  if(typeof unsafeWindow != 'undefined') {
+    console.log('hcard2-livejournal.user.js: using unsafeWindow');
     w = unsafeWindow;
   }
-  if(typeof console == "undefined") console = w.console;
-  if(typeof Promise != "undefined") {
-    res = new Promise(function(f){resolve=f;});
+  if(typeof console == 'undefined') { console = w.console; } // jshint ignore:line
+  if(typeof Promise != 'undefined') {
+    res = new Promise(function(f) { resolve=f; });
     res.then(fastResolve);
   }
   var dconsole = console;
-  dconsole={log:function(){}};
-  dconsole.log("hcard2-livejournal.user.js: "+window.location.href);
-  function mfenrich_livejournal_hcard_do(){
+  dconsole = {log:function() { }};
+  dconsole.log('hcard2-livejournal.user.js: '+window.location.href);
+  function mfEnrichLivejournalContactDo() {
     dconsole.log(w);
-    dconsole.log("hcard2-livejournal.user.js: readyState="+window.document.readyState+"; jQuery is "+(typeof w.jQuery));
-    if((window.document.readyState != "complete") || (typeof w.jQuery == "undefined")) {
-      dconsole.log("hcard2-livejournal.user.js: continue");
-      return window.setTimeout(mfenrich_livejournal_hcard_do,1000);
+    dconsole.log('hcard2-livejournal.user.js: readyState='+window.document.readyState+'; jQuery is '+(typeof w.jQuery));
+    if((window.document.readyState != 'complete') || (typeof w.jQuery == 'undefined')) {
+      dconsole.log('hcard2-livejournal.user.js: continue');
+      return window.setTimeout(mfEnrichLivejournalContactDo,1000);
     }
     // first we adding child classes for full-name nickname and url
     w.jQuery('.i-ljuser-username').addClass('nickname fn url p-name u-url');
@@ -49,9 +51,10 @@
     // so Operator (or other microformat-parsing addon) can catch our changes.
     // When Operator migrates to MutationObserver it will be unnecessary.
       .trigger('DOMNodeInserted');
-    w.jQuery('body').append('<p><a href="https://github.com/pyhedgehog/microformat-userjs" rel="nofollow">Handled hcard-livejournal by microformat enricher (found '+count+' contacts).</a></p>');
+    w.jQuery('body').append('<p><a href="https://github.com/pyhedgehog/microformat-userjs" rel="nofollow">'+
+                            'Handled hcard-livejournal by microformat enricher (found '+count+' contacts).</a></p>');
     console.log('hcard2-livejournal.user.js: done');
   }
-  mfenrich_livejournal_hcard_do();
+  mfEnrichLivejournalContactDo();
   return res;
 })();

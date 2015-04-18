@@ -12,5 +12,5 @@ scripts = scripts.map(function(script) {
   return new ScriptInfo(script).parse();
 });
 
-var output = path.resolve(baseDir, 'lib', 'scripts-data.json');
+var output = path.resolve(rootDir, 'lib', 'scripts-data.json');
 fs.writeFileSync(output, JSON.stringify(scripts, null, 2), {encoding:'utf8'});
