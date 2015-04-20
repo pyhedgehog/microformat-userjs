@@ -1,8 +1,8 @@
 // ==UserScript==
 // @id             hcard-wigloo-amdocs@pyhedgehog.github.com
 // @name           hCard enricher for Amdocs Wigloo pages
-// @version        1.2
-// @homepageURL    https://github.com/pyhedgehog/microformat-userjs/
+// @version        1.3
+// @homepageURL    https://github.com/pyhedgehog/microformat-userjs/wiki/AmdocsWigloo_hCard
 // @namespace      https://github.com/pyhedgehog/microformat-userjs/
 // @downloadURL    https://raw.githubusercontent.com/pyhedgehog/microformat-userjs/master/userjs/hcard-wigloo-amdocs.user.js
 // @updateURL      https://pyhedgehog.github.io/microformat-userjs/userjs/hcard-wigloo-amdocs.user.js
@@ -54,6 +54,10 @@
     Array.prototype.map.call(window.document.getElementsByClassName('contents_with_top_border'), tools.add_h_card);
   }
   elem = window.document.getElementById('ctl00_ctl00_PlaceHolderMain_ProfileInnerContents_ColleaguesView1_Grid1');
+  if(elem) {
+    Array.prototype.map.call(elem.getElementsByClassName('Row'), tools.find_colleague_p_name).map(tools.add_h_card);
+  }
+  elem = window.document.getElementById('ctl00_PlaceHolderMain_TabControl1_PeopleSearchResults1_Grid1');
   if(elem) {
     Array.prototype.map.call(elem.getElementsByClassName('Row'), tools.find_colleague_p_name).map(tools.add_h_card);
   }
