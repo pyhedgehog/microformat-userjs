@@ -12,19 +12,27 @@
       ],
       [
         "version",
-        "1.1"
+        "1.2"
       ],
       [
-        "homepage",
-        "https://github.com/pyhedgehog/microformat-userjs/"
+        "homepageURL",
+        "https://github.com/pyhedgehog/microformat-userjs/wiki/LiveJournal_adr"
       ],
       [
         "namespace",
         "https://github.com/pyhedgehog/microformat-userjs/"
       ],
       [
+        "downloadURL",
+        "https://raw.githubusercontent.com/pyhedgehog/microformat-userjs/master/userjs/adr-livejournal.user.js"
+      ],
+      [
+        "updateURL",
+        "https://pyhedgehog.github.io/microformat-userjs/userjs/adr-livejournal.meta.js"
+      ],
+      [
         "author",
-        "Michael P. Dubner <pywebmail@mail.ru> http://pyhedgehog.livejorunal.com/"
+        "Michael P. Dubner <pywebmail@mail.ru> http://pyhedgehog.livejournal.com/"
       ],
       [
         "description",
@@ -53,10 +61,10 @@
       ],
       [
         "version",
-        "1.0"
+        "1.2"
       ],
       [
-        "homepage",
+        "homepageURL",
         "https://github.com/pyhedgehog/microformat-userjs/"
       ],
       [
@@ -64,8 +72,16 @@
         "https://github.com/pyhedgehog/microformat-userjs/"
       ],
       [
+        "downloadURL",
+        "https://raw.githubusercontent.com/pyhedgehog/microformat-userjs/master/userjs/event-bigbilet.user.js"
+      ],
+      [
+        "updateURL",
+        "https://pyhedgehog.github.io/microformat-userjs/userjs/event-bigbilet.user.js"
+      ],
+      [
         "author",
-        "Michael P. Dubner <pywebmail@mail.ru> http://pyhedgehog.livejorunal.com/"
+        "Michael P. Dubner <pywebmail@mail.ru> http://pyhedgehog.livejournal.com/"
       ],
       [
         "description",
@@ -90,6 +106,63 @@
     ]
   ],
   [
+    "hcard-wigloo-amdocs.user.js",
+    [
+      [
+        "id",
+        "hcard-wigloo-amdocs@pyhedgehog.github.com"
+      ],
+      [
+        "name",
+        "hCard enricher for Amdocs Wigloo pages"
+      ],
+      [
+        "version",
+        "1.2"
+      ],
+      [
+        "homepageURL",
+        "https://github.com/pyhedgehog/microformat-userjs/"
+      ],
+      [
+        "namespace",
+        "https://github.com/pyhedgehog/microformat-userjs/"
+      ],
+      [
+        "downloadURL",
+        "https://raw.githubusercontent.com/pyhedgehog/microformat-userjs/master/userjs/hcard-wigloo-amdocs.user.js"
+      ],
+      [
+        "updateURL",
+        "https://pyhedgehog.github.io/microformat-userjs/userjs/hcard-wigloo-amdocs.user.js"
+      ],
+      [
+        "author",
+        "Michael P. Dubner <pywebmail@mail.ru> http://pyhedgehog.livejournal.com/"
+      ],
+      [
+        "description",
+        "Microformat enriching script for contacts on Amdocs Wigloo site"
+      ],
+      [
+        "include",
+        "*://wigloo/*"
+      ],
+      [
+        "include",
+        "*://wigloo.corp.amdocs.com/*"
+      ],
+      [
+        "run-at",
+        "document-end"
+      ],
+      [
+        "grant",
+        "unsafeWindow"
+      ]
+    ]
+  ],
+  [
     "hcard1-livejournal.user.js",
     [
       [
@@ -102,19 +175,27 @@
       ],
       [
         "version",
-        "1.1"
+        "1.2"
       ],
       [
-        "homepage",
-        "https://github.com/pyhedgehog/microformat-userjs/"
+        "homepageURL",
+        "https://github.com/pyhedgehog/microformat-userjs/wiki/LiveJournal_hCard"
       ],
       [
         "namespace",
         "https://github.com/pyhedgehog/microformat-userjs/"
       ],
       [
+        "downloadURL",
+        "https://raw.githubusercontent.com/pyhedgehog/microformat-userjs/master/userjs/hcard1-livejournal.user.js"
+      ],
+      [
+        "updateURL",
+        "https://pyhedgehog.github.io/microformat-userjs/userjs/hcard1-livejournal.user.js"
+      ],
+      [
         "author",
-        "Michael P. Dubner <pywebmail@mail.ru> http://pyhedgehog.livejorunal.com/"
+        "Michael P. Dubner <pywebmail@mail.ru> http://pyhedgehog.livejournal.com/"
       ],
       [
         "description",
@@ -143,19 +224,27 @@
       ],
       [
         "version",
-        "1.1"
+        "1.2"
       ],
       [
-        "homepage",
-        "https://github.com/pyhedgehog/microformat-userjs/"
+        "homepageURL",
+        "https://github.com/pyhedgehog/microformat-userjs/wiki/LiveJournal_hCard"
       ],
       [
         "namespace",
         "https://github.com/pyhedgehog/microformat-userjs/"
       ],
       [
+        "downloadURL",
+        "https://raw.githubusercontent.com/pyhedgehog/microformat-userjs/master/userjs/hcard2-livejournal.user.js"
+      ],
+      [
+        "updateURL",
+        "https://pyhedgehog.github.io/microformat-userjs/userjs/hcard2-livejournal.user.js"
+      ],
+      [
         "author",
-        "Michael P. Dubner <pywebmail@mail.ru> http://pyhedgehog.livejorunal.com/"
+        "Michael P. Dubner <pywebmail@mail.ru> http://pyhedgehog.livejournal.com/"
       ],
       [
         "description",

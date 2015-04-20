@@ -14,7 +14,7 @@
     "lint": "npm run jshint1&&npm run jshint2&&npm run jscs",
     "jshint1": "node node_modules/jshint/bin/jshint tests/ lib/ bin/",
     "jshint2": "node node_modules/jshint/bin/jshint -c userjs.jshintrc userjs/",
-    "jscs": "node node_modules/jscs/bin/jscs bin/ lib/ tests/ userjs/",
+    "jscs": "node node_modules/jscs/bin/jscs bin/ lib/ tests/ userjs/"
   },
   "repository": {
     "type": "git",

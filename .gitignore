@@ -31,3 +31,8 @@ node_modules.*
 # local toys
 operator/orig
 urls.txt
+data/jquery-2.1.3.js
+local.json
+
+# FIXME: temporary
+tests/test_urls.db

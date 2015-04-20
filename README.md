@@ -1,15 +1,16 @@
-Status: [![Build Status](https://travis-ci.org/pyhedgehog/microformat-userjs.svg)](https://travis-ci.org/pyhedgehog/microformat-userjs)
+Status:
+[![Build Status](https://travis-ci.org/pyhedgehog/microformat-userjs.svg)](https://travis-ci.org/pyhedgehog/microformat-userjs)
 [![Code Climate](https://codeclimate.com/github/pyhedgehog/microformat-userjs.svg)](https://codeclimate.com/github/pyhedgehog/microformat-userjs)
 [![Test Coverage](https://codeclimate.com/github/pyhedgehog/microformat-userjs/badges/coverage.svg)](https://codeclimate.com/github/pyhedgehog/microformat-userjs)
 [![Dependency Status](https://david-dm.org/pyhedgehog/microformat-userjs.svg)](https://david-dm.org/pyhedgehog/microformat-userjs)
 [![devDependency Status](https://david-dm.org/pyhedgehog/microformat-userjs/dev-status.svg)](https://david-dm.org/pyhedgehog/microformat-userjs#info=devDependencies)
 
-Community: [![Open Issues](https://img.shields.io/github/issues/pyhedgehog/microformat-userjs.svg)](https://github.com/pyhedgehog/microformat-userjs/issues)
+Docs:
+[![Manuals](https://pyhedgehog.github.io/microformat-userjs/images/docs.svg)](https://github.com/pyhedgehog/microformat-userjs/wiki#enrichers-implemented-in-this-repository)
+[![Install](https://pyhedgehog.github.io/microformat-userjs/images/install.svg)](https://github.com/pyhedgehog/microformat-userjs/tree/master/userjs/)
+[![Open Issues](https://img.shields.io/github/issues/pyhedgehog/microformat-userjs.svg)](https://github.com/pyhedgehog/microformat-userjs/issues)
 [![Stars](https://img.shields.io/github/stars/pyhedgehog/microformat-userjs.svg)](https://github.com/pyhedgehog/microformat-userjs/stargazers)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pyhedgehog/microformat-userjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
-
-[![Docs](https://img.shields.io/badge/docs-2%2F5-green.svg)](https://github.com/pyhedgehog/microformat-userjs/wiki#enrichers-implemented-in-this-repository)
-[![Install](https://img.shields.io/badge/install-5-green.svg)](https://github.com/pyhedgehog/microformat-userjs/tree/master/userjs)
 
 # microformat-userjs
 Site-specific scripts for enriching with microformats.
@@ -28,6 +29,7 @@ There are technology that can help - user scripts:
     * Opera: [Violentmonkey](https://addons.opera.com/en/extensions/details/violent-monkey/)
     * Opera: [Tampermonkey](https://addons.opera.com/en/extensions/details/tampermonkey-beta/)
     * IE6: [Turnabout](http://www.webcitation.org/getfile?fileid=1517f90a646a7a3a439f3d5ae51d9d9d9e35872d)
+    * IE7Pro: [IEScripts](http://web.archive.org/web/20121228011634/http://www.iescripts.org/)
     * Chrome: [Tampermonkey](https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo)
     * Safari: [NinjaKit](http://steeev.freehostia.com/wp/2010/07/19/new-extension-for-safari-5-called-ninjakit-lets-you-install-gm-scripts/)
   1. Scripts written on JavaScript - language almost everybody can master.
@@ -41,3 +43,11 @@ You are interested in several concert places (each with own site), and some arti
 
 ### Company Contacts
 Let's pretend that you want to add some colleagues to your own address book to keep contact after any of you leave company. Company address books are rarely compatible with latest open-source standards, so you have to fill the gap.
+
+## TODO
+* Support @exclude
+* Support @match (and @exclude-match)
+* Support [@priority](https://github.com/scriptish/scriptish/wiki/Manual%3A-Metadata-Block#priority-new-in-scriptish)
+* Support @require
+* Support GM_* functions
+* Support @resource
