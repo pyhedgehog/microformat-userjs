@@ -11,11 +11,10 @@
     "mfget": "node bin/mfget.js",
     "genscripts": "node bin/genscripts.js",
     "test": "node tests/test_urls.js",
-    "lint": "npm run jshint1&&npm run jshint2&&npm run jscs0",
+    "lint": "npm run jshint1&&npm run jshint2&&npm run jscs",
     "jshint1": "node node_modules/jshint/bin/jshint tests/ lib/ bin/",
     "jshint2": "node node_modules/jshint/bin/jshint -c userjs.jshintrc userjs/",
     "jscs": "node node_modules/jscs/bin/jscs bin/ lib/ tests/ userjs/",
-    "jscs0": "node node_modules/jscs/bin/jscs bin/ lib/nodesupport.js lib/scriptsregistry.js lib/urlcache.js lib/userjs.js tests/ userjs/"
   },
   "repository": {
     "type": "git",
