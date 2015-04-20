@@ -1,7 +1,7 @@
 // id                  hcard-wigloo-amdocs@pyhedgehog.github.com
 // name                hCard enricher for Amdocs Wigloo pages
-// version             1.2
-// homepageURL         https://github.com/pyhedgehog/microformat-userjs/
+// version             1.3
+// homepageURL         https://github.com/pyhedgehog/microformat-userjs/wiki/AmdocsWigloo_hCard
 // namespace           https://github.com/pyhedgehog/microformat-userjs/
 // downloadURL         https://raw.githubusercontent.com/pyhedgehog/microformat-userjs/master/userjs/hcard-wigloo-amdocs.user.js
 // updateURL           https://pyhedgehog.github.io/microformat-userjs/userjs/hcard-wigloo-amdocs.user.js

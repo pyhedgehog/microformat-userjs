@@ -1,7 +1,7 @@
 // id                  event-bigbilet@pyhedgehog.github.com
 // name                event enricher for bigbilet.ru
 // version             1.2
-// homepageURL         https://github.com/pyhedgehog/microformat-userjs/
+// homepageURL         https://github.com/pyhedgehog/microformat-userjs/wiki/BigBilet_hCalendar
 // namespace           https://github.com/pyhedgehog/microformat-userjs/
 // downloadURL         https://raw.githubusercontent.com/pyhedgehog/microformat-userjs/master/userjs/event-bigbilet.user.js
 // updateURL           https://pyhedgehog.github.io/microformat-userjs/userjs/event-bigbilet.user.js
