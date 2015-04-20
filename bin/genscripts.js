@@ -104,7 +104,7 @@ if(localcfg&&localcfg.web) {
   request.get(cfg, saveRequest.bind(null, path.resolve(rootDir, localcfg.web, 'images', 'install.svg')));
   cfg = copy(reqcfg);
   cfg.url = 'https://img.shields.io/badge/docs-'+docs+'%2F'+scripts.length+'-green.svg';
-  console.log('genscripts: Downloading docs.svg (docs-'+docs+'%2F'+scripts.length+'-green.svg)...');
+  console.log('genscripts: Downloading docs.svg (docs-'+docs+'/'+scripts.length+'-green.svg)...');
   request.get(cfg, saveRequest.bind(null, path.resolve(rootDir, localcfg.web, 'images', 'docs.svg')));
 }
 console.log('genscripts: Done.');
