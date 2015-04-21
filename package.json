@@ -29,8 +29,9 @@
   },
   "devDependencies": {
     "acorn": "^1.0.1",
-    "jshint": "^2.6.3",
+    "jsc": "^0.3.11",
     "jscs": "^1.12.0",
+    "jshint": "^2.6.3",
     "tape": "^3.5.0",
     "tape-catch": "^1.0.4"
   },
@@ -41,9 +42,9 @@
     "userjs"
   ],
   "author": {
-    "name" : "Michael P. Dubner",
-    "email" : "pywebmail@list.ru",
-    "url" : "http://pyhedgehog.livejournal.com/"
+    "name": "Michael P. Dubner",
+    "email": "pywebmail@list.ru",
+    "url": "http://pyhedgehog.livejournal.com/"
   },
   "license": "Unlicense",
   "bugs": {

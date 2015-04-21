@@ -2,7 +2,7 @@
 var fs = require('fs');
 var url = require('url');
 var path = require('path');
-var child_process = require('child_process');
+var childProcess = require('child_process');
 var request = require('request');
 var copy = require('../lib/nodesupport').copy;
 var ScriptInfo = require('../lib/scriptsregistry').ScriptInfo;
@@ -37,9 +37,9 @@ if(localcfg&&localcfg.web) {
   if(localcfg.wiki) {
     var wiki = path.resolve(rootDir, localcfg.wiki);
     var fetch = fs.statSync(path.resolve(wiki, '.git', 'FETCH_HEAD'));
-    if((new Date).valueOf()-fetch.mtime.valueOf()>600000) { // 10 minutes
+    if((new Date()).valueOf()-fetch.mtime.valueOf()>600000) { // 10 minutes
       console.log('genscripts: Updating wiki git...');
-      child_process.spawnSync('git', ['pull'], {cwd:wiki});
+      childProcess.spawnSync('git', ['pull'], {cwd:wiki});
     }
     console.log('genscripts: Parsing wiki...');
     var reWiki = /\(https:\/\/raw\.githubusercontent\.com\/pyhedgehog\/microformat-userjs\/master\/(.*\.user\.js)\)/g;
@@ -50,7 +50,7 @@ if(localcfg&&localcfg.web) {
         var m = [];
         var fn = doc[0];
         doc = doc[1];
-        while((m = reWiki.exec(doc)) != null) {
+        while((m = reWiki.exec(doc)) !== null) {
           //console.log(fn+'.md: script='+m[1]);
           wikiScripts.push([fn, m[1]]);
         }

@@ -108,7 +108,7 @@
         span.appendChild(par.replaceChild(span, txt));
       }
       Array.prototype.forEach.call(elem.getElementsByTagName('a'), tools.add_u_url);
-      tools.add_p_summary(span?span:elem);
+      tools.add_p_summary(span ? span : elem);
       return elem;
     };
     tools.find_attach_img = function(elem) {
@@ -158,7 +158,8 @@
       //w.console.log('event-bigbilet.user.js: all-about-event = '+elems.length);
       if(elems.length === 1) {
         var names = elems[0].getElementsByClassName('ev-name');
-        //w.console.log('event-bigbilet.user.js: all-about-event[0] = '+names[0].firstChild.textContent+' '+(names[0].firstChild.textContent == event.serviceName));
+        //w.console.log('event-bigbilet.user.js: all-about-event[0] = '+names[0].firstChild.textContent+' '+
+        //              (names[0].firstChild.textContent == event.serviceName));
         if(names.length === 1 && names[0].firstChild.textContent == event.serviceName) {
           elem = elems[0];
           var pushElem = window.document.createElement('span');
