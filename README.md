@@ -16,13 +16,13 @@ Docs:
 Site-specific scripts for enriching with microformats.
 
 ## Idea
-There are beautiful idea for making some types of data represented on web pages accessible for automatic and semi-automatic parsing - [Microformats](http://microformats.org/).
+There is beautiful idea for making some types of data represented on web pages accessible for automatic and semi-automatic parsing - [Microformats](http://microformats.org/).
 
-However there are [huge flaw](http://microformats.org/wiki/advocacy) in microformat usage scenario - if we want to gather data from some site we have to force owner of this site to support microformats.
-*It's often unachievable.*
-We have to shift the burden to interested side - user of microformat instead of site owner.
+However there is a [huge flaw](http://microformats.org/wiki/advocacy) in microformat usage scenario - if we want to gather data from some site we have to force owner of this site to support microformats.
+*It's often impossible to do.*
+We have to shift the task to interested side - user of microformat instead of site owner.
 
-There are technology that can help - user scripts:
+There is a technology that can help - user scripts:
   1. It's supported on almost every browser:
     * Firefox: [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
     * Firefox: [Scriptish](https://addons.mozilla.org/en-US/firefox/addon/scriptish/)
@@ -33,13 +33,13 @@ There are technology that can help - user scripts:
     * Chrome: [Tampermonkey](https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo)
     * Safari: [NinjaKit](http://steeev.freehostia.com/wp/2010/07/19/new-extension-for-safari-5-called-ninjakit-lets-you-install-gm-scripts/)
   1. Scripts written on JavaScript - language almost everybody can master.
-  1. This technique (adding microformats using user scripts) supported by in-browser microformat engined (at least by [Operator](https://addons.mozilla.org/en-US/firefox/addon/operator/)).
+  1. This technique (adding microformats using user scripts) supported by in-browser microformat engines (at least by [Operator](https://addons.mozilla.org/en-US/firefox/addon/operator/)).
   1. These scripts can be used to post-process data on server side.
 
 ## Scenarios
 
 ### Music Calendar
-You are interested in several concert places (each with own site), and some artists/groups (each with own site). Every other week you go to each of sites and copy concerts you are interested in to your calendar. You have to create calendar event, fill starting time, summary, address and description at least. Now you can write microformat enricher for every site and add events as batches. And this will work whatever is "provider" for your calendar - google/yahoo/owncloud or local file - single interface for microformat parser should be written and will work with every site that have microformats or was enriched.
+You are interested in several concert places (each with its own site), and some artists/groups (each with its own site). Every other week you go to each of sites and copy concerts you are interested in to your calendar. You have to create calendar event, fill starting time, summary, address and description at least. Now you can write or find microformat enricher for every site and add events as batches. And this will work whatever is "provider" for your calendar - google/yahoo/owncloud or local file. Single interface for microformat parser should be written and will work with every site that have microformats or was enriched.
 
 ### Company Contacts
 Let's pretend that you want to add some colleagues to your own address book to keep contact after any of you leave company. Company address books are rarely compatible with latest open-source standards, so you have to fill the gap.
