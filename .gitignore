@@ -28,6 +28,13 @@ node_modules.*
 # Users Environment Variables
 .lock-wscript
 
+# nodist settings
+.node-version
+
+# js-complexity-viz output
+report.json
+report.txt
+
 # local toys
 operator/orig
 urls.txt
