@@ -1,5 +1,6 @@
 Status:
-[![Build Status](https://travis-ci.org/pyhedgehog/microformat-userjs.svg)](https://travis-ci.org/pyhedgehog/microformat-userjs)
+<!--[![Build Status](https://travis-ci.org/pyhedgehog/microformat-userjs.svg)](https://travis-ci.org/pyhedgehog/microformat-userjs)-->
+![Build Status](https://img.shields.io/badge/build-unavailable-lightgrey.svg)
 [![Code Climate](https://codeclimate.com/github/pyhedgehog/microformat-userjs.svg)](https://codeclimate.com/github/pyhedgehog/microformat-userjs)
 [![Test Coverage](https://codeclimate.com/github/pyhedgehog/microformat-userjs/badges/coverage.svg)](https://codeclimate.com/github/pyhedgehog/microformat-userjs)
 [![Dependency Status](https://david-dm.org/pyhedgehog/microformat-userjs.svg)](https://david-dm.org/pyhedgehog/microformat-userjs)
@@ -14,6 +15,10 @@ Docs:
 
 # microformat-userjs
 Site-specific scripts for enriching with microformats.
+
+## Current Status
+Writing initial bunch of user-scripts needed by alpha-user.
+Testing on Firefox+Scriptish.
 
 ## Idea
 There is beautiful idea for making some types of data represented on web pages accessible for automatic and semi-automatic parsing - [Microformats](http://microformats.org/).
@@ -45,9 +50,19 @@ You are interested in several concert places (each with its own site), and some 
 Let's pretend that you want to add some colleagues to your own address book to keep contact after any of you leave company. Company address books are rarely compatible with latest open-source standards, so you have to fill the gap.
 
 ## TODO
-* Support @exclude
-* Support @match (and @exclude-match)
-* Support [@priority](https://github.com/scriptish/scriptish/wiki/Manual%3A-Metadata-Block#priority-new-in-scriptish)
-* Support @require
-* Support GM_* functions
-* Support @resource
+* Complete initial set of user-scripts.
+* Complete node-based test environment.
+* Improve node-based test environment:
+ * Support `@exclude`
+ * Support `@match` (and `@exclude-match`)
+ * Support [`@priority`](https://github.com/scriptish/scriptish/wiki/Manual%3A-Metadata-Block#priority-new-in-scriptish)
+ * Support `@require`
+ * Support `GM_*` functions
+ * Support `@resource`
+* Write enrichers technology advertizement. (Help wanted)
+* Write standard enricher installation instructions for each possible environment. (Help wanted)
+* Write standard recomendation for site-owners: (Help wanted)
+ * Why we aren't stealing data.
+ * Why user better love their site.
+ * How they may change their site.
+* Write standard recommendation for unparsable site-owners (i.e. personal musicians blogs). (Help wanted)
