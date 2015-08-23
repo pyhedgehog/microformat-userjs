@@ -1,7 +1,8 @@
 ---
-layout: default
+layout: soft
 title: "Microformat-userjs"
 description: "Site-specific scripts for enriching with microformats."
+github_project: microformat-userjs
 ---
 ## Idea
 There are beautiful idea for making some types of data represented on web pages accessible for automatic and semi-automatic parsing - [Microformats](http://microformats.org/).
