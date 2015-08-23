@@ -1,0 +1,15 @@
+# Site settings
+title: MicroFormat-UserJS
+email: pywebmail@list.ru
+description: > # this means to ignore newlines until "baseurl:"
+  Site-specific scripts for enriching with microformats.
+baseurl: "/microformat-userjs" # the subpath of your site, e.g. /blog/
+url: "http://pyhedgehog.github.io" # the base hostname & protocol for your site
+github_username: pyhedgehog
+github_project: microformat-userjs
+
+# Build settings
+markdown: kramdown
+destination: ../pyhedgehog.github.io/microformat-userjs
+
+highlighter: pygments
